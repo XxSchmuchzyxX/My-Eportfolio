@@ -52,7 +52,7 @@
                     <a href="#"><i class="fab fa-github"></i></a>
                 </div>
                 <div class="resume-container">
-                    <a href="resume.pdf" class="resume-button" download>View My Resume</a>
+                    <a href="./assets/Anunciacion-Sean-Resume.pdf" class="resume-button" download>View My Resume</a>
                 </div>
             </div>
         </div>
@@ -90,7 +90,7 @@
             <!-- Education Card -->
             <div class="tech-card">
                 <h2>Education</h2>
-                <img src="./assets/hau.png" alt="Education Icon" class="info-icon">
+                <img src="./assets/Hau.png" alt="Education Icon" class="info-icon">
                 <p class="education">BS in Web Development at <b><a class="about-link" href="https://www.hau.edu.ph/" target="_blank">Holy Angel University</a></b></p>
             </div>
 
@@ -140,29 +140,32 @@
     <img class="modal-content" id="modalImg">
 </div>
 
-    <!-- CONTACT ME SECTION -->
-    <section id="ContactMe">
-        <div class="contact">
-            <h2 class="section-title">Contact Me</h2>
-            <div class="contact-container">
-                <form class="contact-form" action="mailto:your-email@example.com" method="post" enctype="text/plain">
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name" required placeholder="Full Name">
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required placeholder="Email">
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" rows="5" required placeholder="Special Message"></textarea>
-                    </div>
-                    <button type="submit" class="submit-button">Send Message</button>
-                </form>
-            </div>
+  <!-- CONTACT ME SECTION -->
+<section id="ContactMe">
+    <div class="contact">
+        <h2 class="section-title">Contact Me</h2>
+        <div class="contact-container">
+            <form class="contact-form" action="https://formspree.io/f/xpwaeepd" method="POST">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required placeholder="Full Name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required placeholder="Email">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" required placeholder="Special Message"></textarea>
+                </div>
+                <input type="hidden" name="_next" value="https://yourwebsite.com/thank-you.html">
+                
+                <button type="submit" class="submit-button">Send Message</button>
+            </form>
         </div>
-    </section>
+    </div>
+</section>
+
 
     <!-- JavaScript Initialization -->
     <script src="script.js"></script>
