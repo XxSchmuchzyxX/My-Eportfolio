@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sean Anunciacion Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/adfffc35ab.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+</head>
+
+<body>
+    <!-- NAV BAR AREA -->
+    <nav>
+        <ul>
+            <li><a href="#Home" class="nav-link" data-text="Home" aria-label="Home"><i class="fa-solid fa-house"></i></a></li>
+            <li><a href="#about" class="nav-link" data-text="About" aria-label="About"><i class="fa-solid fa-user"></i></a></li>
+            <li><a href="#Experience" class="nav-link" data-text="Experience" aria-label="Experience"><i class="fa-solid fa-bolt"></i></a></li>
+            <li><a href="#Projects" class="nav-link" data-text="Projects" aria-label="Projects"><i class="fa-solid fa-lightbulb"></i></a></li>
+            <li><a href="#Certs" class="nav-link" data-text="Certificates" aria-label="Certificates"><i class="fa-solid fa-award"></i></a></li>
+            <li><a href="#ContactMe" class="nav-link" data-text="Contact Me" aria-label="Contact Me"><i class="fa-solid fa-hashtag"></i></a></li>
+        </ul>
+    </nav>
+
+    <!-- HOME SECTION -->
+    <section id="Home">
+        <div class="intro">
+            <img src="./assets/sean-logo.png" alt="Sean Anunciacion Logo" class="logo">
+            <p>Hello, I am</p>
+            <h1 class="big-name">Sean Anunciacion</h1>
+            <h2 class="subtitle">Web Developer | AI Enthusiast</h2>
+        </div>
+    </section>
+    
+    <!-- ABOUT SECTION -->
+    <section class="about-section" id="about">
+        <h1>About Me</h1>
+        <p>Get to know more about me</p>
+        <div class="about-card">
+            <div class="about-image-container">
+                <img src="./assets/me.png" alt="Sean Anunciacion">
+            </div>
+            <div class="about-content">
+                <h2>Sean Anunciacion</h2>
+                <p class="role">Web Developer | AI Enthusiast</p>
+                <p class="description">Hi, I'm Sean Anunciacion, a passionate web developer and an AI lover dedicated to creating impactful digital experiences.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a> 
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                </div>
+                <div class="resume-container">
+                    <a href="resume.pdf" class="resume-button" download>View My Resume</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXPERIENCE SECTION -->
+    <section class="experience-section" id="Experience">
+        <h1>Experience</h1>
+        <p>Here are the technologies I've worked with and where I've gained my experience.</p>
+        <div class="tech-cards">
+            <!-- Frontend Card -->
+            <div class="tech-card">
+                <h2>Frontend</h2>
+                <ul class="tech-list">
+                    <li data-tech="HTML5"><img src="./assets/html.png" alt="HTML" class="tech-logo"></li>
+                    <li data-tech="CSS3"><img src="./assets/css.png" alt="CSS" class="tech-logo"></li>
+                    <li data-tech="JavaScript"><img src="./assets/js.png" alt="JavaScript" class="tech-logo"></li>
+                    <li data-tech="Angular"><img src="./assets/angular.png" alt="Angular" class="tech-logo"></li>
+                    <li data-tech="React"><img src="./assets/react.png" alt="React" class="tech-logo"></li>
+                </ul>
+            </div>
+
+            <!-- Backend Card -->
+            <div class="tech-card">
+                <h2>Backend</h2>
+                <ul class="tech-list">
+                    <li data-tech="Python"><img src="./assets/python.png" alt="Python" class="tech-logo"></li>
+                    <li data-tech="Node.js"><img src="./assets/node.png" alt="Node.js" class="tech-logo"></li>
+                    <li data-tech="PostgreSQL"><img src="./assets/postgresql.png" alt="PostgreSQL" class="tech-logo"></li>
+                    <li data-tech="MongoDB"><img src="./assets/mongodb.png" alt="MongoDB" class="tech-logo"></li>
+                    <li data-tech="MySQL"><img src="./assets/mysql.png" alt="MySQL" class="tech-logo"></li>
+                </ul>
+            </div>
+
+            <!-- Education Card -->
+            <div class="tech-card">
+                <h2>Education</h2>
+                <img src="./assets/hau.png" alt="Education Icon" class="info-icon">
+                <p class="education">BS in Web Development at <b><a class="about-link" href="https://www.hau.edu.ph/" target="_blank">Holy Angel University</a></b></p>
+            </div>
+
+            <!-- Internship Card -->
+            <div class="tech-card">
+                <h2>Internship</h2>
+                <img src="./assets/squarehub.png" alt="Intern Icon" class="info-icon">
+                <p class="experience">Full Stack Developer Intern at <b><a class="about-link" href="https://www.itsquarehub.com/" target="_blank">IT Squarehub</a></b></p>
+            </div>
+        </div>
+    </section>
+        
+    <!-- PROJECTS SECTION -->
+    <section id="Projects">
+        <div class="projects">
+            <h2 class="section-title">Projects</h2>
+            <div class="projects-container">
+                <div class="project-card">
+                    <h3 class="project-title">Portfolio Website</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- CERTIFICATE SECTION -->
+<section id="Certs">
+    <div class="certs">
+        <h2 class="section-title">Certificates</h2>
+        <div class="certs-container">
+            <div class="cert-item">
+                <img src="./assets/Anunciacion_Google_Cert.png" alt="Certificate 1" onclick="openModal(this)">
+            </div>
+            <div class="cert-item">
+                <img src="./assets/seo-cert1.png" alt="Certificate 2" onclick="openModal(this)">
+            </div>
+            <div class="cert-item">
+                <img src="./assets/seo-cert2.png" alt="Certificate 3" onclick="openModal(this)">
+            </div>
+            <!-- Add more certificate items as needed -->
+        </div>
+    </div>
+</section>
+
+<!-- Modal Structure -->
+<div id="certModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="modalImg">
+</div>
+
+    <!-- CONTACT ME SECTION -->
+    <section id="ContactMe">
+        <div class="contact">
+            <h2 class="section-title">Contact Me</h2>
+            <div class="contact-container">
+                <form class="contact-form" action="mailto:your-email@example.com" method="post" enctype="text/plain">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required placeholder="Full Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required placeholder="Special Message"></textarea>
+                    </div>
+                    <button type="submit" class="submit-button">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- JavaScript Initialization -->
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,729 @@
+/* Smooth scrolling behavior */
+* {
+    scroll-behavior: smooth;
+}
+
+/* Basic styling for body */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+body::-webkit-scrollbar {
+    display: none; /* For Chrome, Safari, and Edge */
+}
+/* Ensures smooth scrolling in HTML */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Styling for the navigation bar */
+nav {
+    position: fixed;
+    top: 50%;
+    left: 40px;
+    transform: translateY(-50%);
+    z-index: 1000;
+}
+
+/* Styling for the navigation list */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* Styling for each navigation list item */
+nav ul li {
+    margin: 35px 0; /* Increased margin to add more space between icons */
+    position: relative;
+    list-style-type: none;
+}
+
+/* Base styling for navigation links */
+.nav-link {
+    display: block;
+    width: 15px;
+    height: 15px;
+    background-color: transparent;
+    border-radius: 50%;
+    position: relative;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Styling for icons within navigation links */
+.nav-link i {
+    color: #333;
+    font-size: 30px;
+    transition: transform 0.3s ease; /* Smooth transition for icon size */
+}
+
+/* Styling for active and hovered navigation links */
+.nav-link.active,
+.nav-link:hover {
+    background-color: transparent;
+    transform: scale(1.8); /* Slightly enlarge the dot */
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); Add a subtle shadow */
+}
+
+.nav-link.active i,
+.nav-link:hover i {
+    transform: scale(1.2); /* Enlarge the icon */
+}
+
+/* Tooltip styling for navigation links */
+.nav-link::before {
+    content: attr(data-text); /* Displays text from data-text attribute */
+    position: absolute; /* Positions the tooltip relative to the nav link */
+    left: 40px; /* Distance from the icon */
+    top: 50%; /* Vertically centers the tooltip */
+    transform: translateY(-50%); /* Adjusts vertical alignment */
+    background-color: transparent; /* Background color */
+    color: rgba(0, 0, 0, 0.7); /* Text color */
+    padding: 5px 10px; /* Padding */
+    border-radius: 10px; /* Rounded corners */
+    white-space: nowrap; /* Prevents text wrapping */
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+    pointer-events: none; /* Tooltip does not interfere with mouse events */
+    font-size: 20px; /* Font size */
+    font-family: 'monospace', sans-serif; /* Font style */
+    font-weight: bold; /* Font weight */
+}
+
+/* Tooltip visibility on hover and active states */
+.nav-link:hover::before,
+.nav-link.active::before {
+    opacity: 1; /* Make tooltip visible */
+    transform: translateY(-50%) translateX(0); /* Adjusted for more separation from the dot */
+}
+
+/* Fade-out effect for active state */
+.nav-link.active::before {
+    animation: fadeOut 0.5s linear forwards; /* Fade out after 3 seconds */
+    animation-delay: 0.5s; /* Delay before starting the fade-out animation */
+}
+
+/* Fade-out effect for active state */
+.nav-link.active::before {
+    animation: fadeOut 0.5s linear forwards; /* Fade out after 3 seconds */
+    animation-delay: 0.5s; /* Delay before starting the fade-out animation */
+}
+
+/* Keyframe animation for fade-out effect */
+@keyframes fadeOut {
+    0% {
+        opacity: 1; /* Fully visible at the start */
+    }
+    100% {
+        opacity: 0; /* Fully transparent at the end */
+    }
+}
+/* Styling for the intro section */
+.intro {
+    text-align: center;
+    padding-top: 100px;
+}
+
+/* Styling for the logo */
+.logo {
+    width: 500px;
+    height: auto;
+    margin-bottom: 20px;
+    animation: fadeInDown 1s ease-out;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+    background-color: transparent; /* Ensure background is transparent */
+    border: none; /* Remove any borders */
+}
+
+.logo:hover {
+    transform: perspective(1000px) rotateY(15deg); /* 3D rotation effect */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+}
+
+/* Styling for paragraph text */
+p {
+    font-size: 24px;
+    font-style: monospace;
+    color: rgba(0, 0, 0, 0.7);
+    letter-spacing: 2px;
+    margin: 0;
+    animation: fadeInUp 1s ease-out;
+}
+
+
+/* Styling for the big name */
+.big-name {
+    font-size: 110px;
+    color: rgba(0, 0, 0, 0.7);
+    margin: 10px 0;
+    font-weight: bold;
+    animation: fadeInUp 3.7s ease-out;
+    transition: transform 0.3s ease, text-shadow 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.big-name:hover {
+    transform: perspective(1000px) rotateX(10deg); /* 3D rotation effect */
+    text-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+}
+
+/* Keyframe animation for fade-in-up effect */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Keyframe animation for fade-in-down effect */
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Keyframe animation for fade-out effect */
+@keyframes fadeOut {
+    0% {
+        opacity: 1; /* Fully visible at the start */
+    }
+    100% {
+        opacity: 0; /* Fully transparent at the end */
+    }
+}
+
+.subtitle {
+    font-size: 30px;
+    color: rgba(0, 0, 0, 0.7);
+    margin: 10px 0;
+    font-weight: bold;
+    animation: fadeInUp 3.7s ease-out;
+    transition: transform 0.3s ease, text-shadow 0.3s ease; /* Smooth transition for hover effects */
+}
+
+/* Styling for sections */
+section {
+    height: 100vh;
+    padding: 50px 20px;
+}
+
+/* About Section Styling */
+.about-section {
+    display: flex;
+    flex-direction: column; /* Arrange heading and card vertically */
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+    background-color: #f4f4f4;
+    animation: fadeInSlideUp 1s ease-in-out; /* Add animation to the section */
+}
+
+/* About Section Heading Styling */
+.about-section h1 {
+    font-size: 3rem; /* Increased font size */
+    color: #333; /* Darker color for better contrast */
+    margin-bottom: 10px; /* Adjusted margin for spacing */
+    animation: fadeInSlideUp 1s ease-in-out; /* Add animation to the heading */
+}
+
+.about-section p {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 40px; /* Adjusted margin for spacing */
+    animation: fadeInSlideUp 1.2s ease-in-out; /* Add animation to the paragraph */
+}
+
+/* About Card Styling */
+.about-card {
+    display: flex;
+    flex-direction: row; /* Arrange image and content side by side */
+    align-items: center;
+    padding: 50px; /* Increased padding for a larger card */
+    background-color: white;
+    border-radius: 20px; /* More rounded corners */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    max-width: 1100px; /* Increased max-width for a larger card */
+    width: 100%; /* Make the card responsive */
+    animation: fadeInSlideUp 1s ease-in-out; /* Add animation to the card */
+}
+
+.about-card:hover {
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    transform: translateY(-10px); /* Hover effect */
+}
+
+/* Image Container Styling */
+.about-image-container {
+    flex: 1; /* Allow the image container to take up equal space */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 30px; /* Add space between image and content */
+}
+
+.about-image-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px; /* Match the card's rounded corners */
+    object-fit: cover;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Add a subtle shadow to the image */
+}
+
+/* About Content Styling */
+.about-content {
+    flex: 2; /* Allow the content to take up more space */
+    padding: 20px;
+}
+
+/* Minimalist design tweaks */
+.about-content h2 {
+    font-size: 2.5rem; /* Increased font size */
+    color: #333;
+    margin-bottom: 10px;
+    animation: fadeInSlideUp 1.2s ease-in-out; /* Add animation to the content */
+}
+
+.about-content .role {
+    font-size: 1.6rem; /* Increased font size */
+    color: #555;
+    margin-bottom: 20px;
+    animation: fadeInSlideUp 1.4s ease-in-out; /* Add animation to the content */
+}
+
+.about-link {
+    text-decoration: none;
+    color: inherit; /* Remove the color of the URL */
+}
+
+.about-content .description {
+    font-size: 1.2rem;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 20px; /* Adjusted margin for spacing */
+    animation: fadeInSlideUp 1.6s ease-in-out; /* Add animation to the content */
+}
+
+/* Social Icons Styling */
+.social-icons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 20px; /* Add some space between social icons and resume button */
+    animation: fadeInSlideUp 2s ease-in-out; /* Add animation to the social icons */
+}
+
+.social-icons a {
+    font-size: 30px;
+    color: #333;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #1e90ff;
+    transform: scale(1.2);
+}
+
+/* Resume Button Container Styling */
+.resume-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    animation: fadeInSlideUp 2.2s ease-in-out; /* Add animation to the resume button */
+}
+
+.resume-button {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    background-color: #333;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.resume-button:hover {
+    background-color: #1e90ff;
+    transform: scale(1.1);
+}
+
+/* Minimalist fade-in and slide-up animation */
+@keyframes fadeInSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Experience Section Styling */
+.experience-section {
+    text-align: center;
+    padding: 60px;
+    background-color: #f4f4f4;
+    animation: fadeInSlideUp 1s ease-in-out; /* Add animation to the section */
+}
+
+.experience-section h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+    animation: fadeInSlideUp 1.2s ease-in-out; /* Add animation to the heading */
+}
+
+.experience-section p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 40px;
+    animation: fadeInSlideUp 1.4s ease-in-out; /* Add animation to the paragraph */
+}
+
+/* Tech Cards */
+.tech-cards {
+    display: flex;
+    justify-content: center; /* Center the cards */
+    align-items: flex-start; /* Align the top of the cards */
+    flex-wrap: wrap;
+    gap: 40px;
+    width: 100%; /* Full-width container */
+    max-width: 1200px; /* Optional max-width to avoid overflow on large screens */
+    margin: 0 auto; /* Center the container itself */
+}
+
+.tech-card {
+    background-color: white;
+    padding: 40px 20px;
+    border-radius: 10px;
+    width: 45%; /* Percentage for flexible resizing */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    animation: fadeInSlideUp 1.6s ease-in-out; /* Add animation to the cards */
+}
+
+.tech-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.tech-card h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Tech List */
+.tech-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.tech-list li {
+    position: relative;
+    display: inline-block;
+}
+
+.tech-list li:hover::after {
+    content: attr(data-tech);
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 1rem;
+    white-space: nowrap;
+}
+
+/* Image Styling */
+.tech-logo {
+    width: 60px;
+    height: 60px;
+    margin-right: 10px;
+    vertical-align: middle;
+    transition: transform 0.3s ease;
+}
+
+.tech-logo:hover {
+    transform: scale(1.2);
+    box-shadow: 0 8px 20px rgba(0, 81, 255, 0.2);
+    color: transparent;
+    background-color: transparent;
+}
+
+/* Info Section Styling */
+.info-section {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px; /* Add space between info section and social icons */
+}
+
+.info-icon {
+    width: 100px; /* Increased size for better visibility */
+    height: 100px;
+    margin: 20px;
+    border-radius: 50%; /* Make the icon circular */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Add a subtle shadow to the icon */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+}
+
+.info-icon:hover {
+    transform: scale(1.1); /* Slightly enlarge the icon on hover */
+    box-shadow: 0 8px 20px rgba(0, 81, 255, 0.2); /* Enhance shadow on hover */
+}
+
+/* Minimalist fade-in and slide-up animation */
+@keyframes fadeInSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Certificate Section Styling */
+
+
+/* Contact Me Section Styling */
+#ContactMe {
+    padding: 60px 20px;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 40px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Contact Container */
+.contact-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Contact Card */
+.contact-card {
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+    text-align: left;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+/* Contact Me Section Styling */
+#ContactMe {
+    padding: 60px 20px;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 40px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Contact Container */
+.contact-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Contact Form */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 600px;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent background */
+    backdrop-filter: blur(5px); /* Blur effect for background */
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #1e90ff;
+    outline: none;
+    box-shadow: 0 0 10px rgba(30, 144, 255, 0.2); /* Add subtle shadow on focus */
+}
+
+.submit-button {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #1e90ff;
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(30, 144, 255, 0.3); /* Add shadow on hover */
+}
+
+/* Keyframe animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Styling for the certificate section */
+#Certs {
+    padding: 50px 0;
+    background-color: #f4f4f4;
+}
+
+.certs {
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.certs-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.cert-item {
+    background-color: white;
+    border: none; /* Removed border */
+    border-radius: 10px;
+    padding: 20px;
+    width: 400px; /* Increased width */
+    height:400px; /* Increased height */;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.cert-item img {
+    max-width: 100%;
+    border-radius: 5px;
+    cursor: pointer; /* Add cursor pointer */
+}
+
+.cert-item p {
+    margin-top: 10px;
+    font-size: 1em;
+    color: #333;
+}
+
+.cert-item:hover {
+    transform: scale(1.05);
+}
+
+/* Modal styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 90%; /* Increased width */
+    max-width: 900px; /* Increased max-width */
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
