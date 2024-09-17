@@ -216,7 +216,7 @@ p {
 
 /* Styling for sections */
 section {
-    height: 100vh;
+    height: 120vh;
     padding: 50px 20px;
 }
 
@@ -278,7 +278,7 @@ section {
 .about-image-container img {
     width: 100%;
     height: auto;
-    border-radius: 20px; /* Match the card's rounded corners */
+    border-radius: 20px; 
     object-fit: cover;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Add a subtle shadow to the image */
 }
@@ -291,17 +291,19 @@ section {
 
 /* Minimalist design tweaks */
 .about-content h2 {
-    font-size: 2.5rem; /* Increased font size */
+    font-size: 2.5rem; 
     color: #333;
     margin-bottom: 10px;
-    animation: fadeInSlideUp 1.2s ease-in-out; /* Add animation to the content */
+    animation: fadeInSlideUp 1.2s ease-in-out;
+    text-align: center;
 }
 
 .about-content .role {
-    font-size: 1.6rem; /* Increased font size */
+    font-size: 1.6rem; 
     color: #555;
     margin-bottom: 20px;
-    animation: fadeInSlideUp 1.4s ease-in-out; /* Add animation to the content */
+    animation: fadeInSlideUp 1.4s ease-in-out;
+    text-align: center; 
 }
 
 .about-link {
