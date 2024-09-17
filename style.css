@@ -131,7 +131,7 @@ nav ul li {
 
 /* Styling for the logo */
 .logo {
-    width: 500px;
+    width: 300px;
     height: auto;
     margin-bottom: 20px;
     animation: fadeInDown 1s ease-out;
