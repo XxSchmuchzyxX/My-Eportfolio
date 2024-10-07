@@ -1,3 +1,4 @@
+
 /* Smooth scrolling behavior */
 * {
     scroll-behavior: smooth;
@@ -136,13 +137,15 @@ nav ul li {
     margin-bottom: 20px;
     animation: fadeInDown 1s ease-out;
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
-    background-color: transparent; /* Ensure background is transparent */
+    background: transparent; /* Ensure background is transparent */
     border: none; /* Remove any borders */
+    transition: all 3s ease; /* Smooth transition for hover effects */
+    
 }
 
 .logo:hover {
-    transform: perspective(1000px) rotateY(15deg); /* 3D rotation effect */
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+    transform: perspective(1000px) rotatey(360deg); /* 3D rotation effect */
+
 }
 
 /* Styling for paragraph text */
@@ -388,7 +391,8 @@ section {
     color: #333;
     margin-bottom: 20px;
     animation: fadeInSlideUp 1.2s ease-in-out; /* Add animation to the heading */
-}
+    color: red;
+    }
 
 .experience-section p {
     font-size: 1.2rem;

@@ -41,6 +41,7 @@ function updateActiveNav() {
 // Listen for scroll event and apply debounce to limit how often the function is called
 window.addEventListener('scroll', debounce(updateActiveNav));
 
+
 // Ensure the function runs after the DOM content has fully loaded
 document.addEventListener('DOMContentLoaded', updateActiveNav);
 
