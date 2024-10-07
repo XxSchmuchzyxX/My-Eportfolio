@@ -10,6 +10,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
+
 }
 body::-webkit-scrollbar {
     display: none; /* For Chrome, Safari, and Edge */
@@ -140,12 +141,23 @@ nav ul li {
     background: transparent; /* Ensure background is transparent */
     border: none; /* Remove any borders */
     transition: all 3s ease; /* Smooth transition for hover effects */
+   ;
     
 }
 
 .logo:hover {
-    transform: perspective(1000px) rotatey(360deg); /* 3D rotation effect */
+    /* transform: perspective(1000px) rotatey(360deg); 3D rotation effect */
+    animation: spaceRotate 3s linear 0s infinite ;
 
+
+}
+@keyframes spaceRotate {
+    0% {
+        transform: rotatey(0deg);
+    }
+    100% {
+        transform: rotatey(360deg);
+    }
 }
 
 /* Styling for paragraph text */
@@ -230,7 +242,10 @@ section {
     align-items: center;
     justify-content: center;
     padding: 50px;
-    background-color: #f4f4f4;
+    background-color: #f4f4f4a5;
+    /* background-image: url('./assets/background-top.png');
+    background-position: center;
+    background-size: cover; */
     animation: fadeInSlideUp 1s ease-in-out; /* Add animation to the section */
 }
 
@@ -256,6 +271,7 @@ section {
     align-items: center;
     padding: 50px; /* Increased padding for a larger card */
     background-color: white;
+    backdrop-filter: blur(10px); /* Add a blur effect to the background */
     border-radius: 20px; /* More rounded corners */
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     transition: box-shadow 0.3s ease, transform 0.3s ease;
@@ -391,7 +407,7 @@ section {
     color: #333;
     margin-bottom: 20px;
     animation: fadeInSlideUp 1.2s ease-in-out; /* Add animation to the heading */
-    color: red;
+    color: black;
     }
 
 .experience-section p {
