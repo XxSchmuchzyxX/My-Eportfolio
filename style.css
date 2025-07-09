@@ -1,4 +1,3 @@
-
 /* Smooth scrolling behavior */
 * {
     scroll-behavior: smooth;
@@ -10,11 +9,12 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
-
 }
+
 body::-webkit-scrollbar {
     display: none; /* For Chrome, Safari, and Edge */
 }
+
 /* Ensures smooth scrolling in HTML */
 html {
     scroll-behavior: smooth;
@@ -69,7 +69,6 @@ nav ul li {
 .nav-link:hover {
     background-color: transparent;
     transform: scale(1.8); /* Slightly enlarge the dot */
-    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); Add a subtle shadow */
 }
 
 .nav-link.active i,
@@ -110,12 +109,6 @@ nav ul li {
     animation-delay: 0.5s; /* Delay before starting the fade-out animation */
 }
 
-/* Fade-out effect for active state */
-.nav-link.active::before {
-    animation: fadeOut 0.5s linear forwards; /* Fade out after 3 seconds */
-    animation-delay: 0.5s; /* Delay before starting the fade-out animation */
-}
-
 /* Keyframe animation for fade-out effect */
 @keyframes fadeOut {
     0% {
@@ -125,6 +118,7 @@ nav ul li {
         opacity: 0; /* Fully transparent at the end */
     }
 }
+
 /* Styling for the intro section */
 .intro {
     text-align: center;
@@ -141,16 +135,12 @@ nav ul li {
     background: transparent; /* Ensure background is transparent */
     border: none; /* Remove any borders */
     transition: all 3s ease; /* Smooth transition for hover effects */
-   ;
-    
 }
 
 .logo:hover {
-    /* transform: perspective(1000px) rotatey(360deg); 3D rotation effect */
-    animation: spaceRotate 3s linear 0s infinite ;
-
-
+    animation: spaceRotate 3s linear 0s infinite;
 }
+
 @keyframes spaceRotate {
     0% {
         transform: rotatey(0deg);
@@ -169,7 +159,6 @@ p {
     margin: 0;
     animation: fadeInUp 1s ease-out;
 }
-
 
 /* Styling for the big name */
 .big-name {
@@ -210,16 +199,6 @@ p {
     }
 }
 
-/* Keyframe animation for fade-out effect */
-@keyframes fadeOut {
-    0% {
-        opacity: 1; /* Fully visible at the start */
-    }
-    100% {
-        opacity: 0; /* Fully transparent at the end */
-    }
-}
-
 .subtitle {
     font-size: 30px;
     color: rgba(0, 0, 0, 0.7);
@@ -243,9 +222,6 @@ section {
     justify-content: center;
     padding: 50px;
     background-color: #f4f4f4a5;
-    /* background-image: url('./assets/background-top.png');
-    background-position: center;
-    background-size: cover; */
     animation: fadeInSlideUp 1s ease-in-out; /* Add animation to the section */
 }
 
@@ -408,7 +384,7 @@ section {
     margin-bottom: 20px;
     animation: fadeInSlideUp 1.2s ease-in-out; /* Add animation to the heading */
     color: black;
-    }
+}
 
 .experience-section p {
     font-size: 1.2rem;
@@ -515,54 +491,6 @@ section {
 .info-icon:hover {
     transform: scale(1.1); /* Slightly enlarge the icon on hover */
     box-shadow: 0 8px 20px rgba(0, 81, 255, 0.2); /* Enhance shadow on hover */
-}
-
-/* Minimalist fade-in and slide-up animation */
-@keyframes fadeInSlideUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Certificate Section Styling */
-
-
-/* Contact Me Section Styling */
-#ContactMe {
-    padding: 60px 20px;
-    background-color: #f4f4f4;
-    text-align: center;
-}
-
-.section-title {
-    font-size: 2.5rem;
-    color: #333;
-    margin-bottom: 40px;
-    animation: fadeIn 1s ease-in-out;
-}
-
-/* Contact Container */
-.contact-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* Contact Card */
-.contact-card {
-    background-color: white;
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-    max-width: 600px;
-    width: 100%;
-    text-align: left;
-    animation: fadeInUp 1s ease-in-out;
 }
 
 /* Contact Me Section Styling */
@@ -673,11 +601,6 @@ section {
     text-align: center;
 }
 
-.section-title {
-    font-size: 2em;
-    margin-bottom: 20px;
-}
-
 .certs-container {
     display: flex;
     flex-wrap: wrap;
@@ -691,7 +614,7 @@ section {
     border-radius: 10px;
     padding: 20px;
     width: 400px; /* Increased width */
-    height:400px; /* Increased height */;
+    height: 400px; /* Increased height */
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
@@ -748,4 +671,332 @@ section {
     color: #bbb;
     text-decoration: none;
     cursor: pointer;
+}
+
+/* ===== MOBILE RESPONSIVE STYLES ===== */
+
+/* Tablets and small laptops */
+@media (max-width: 1024px) {
+    .tech-cards {
+        gap: 30px;
+    }
+    
+    .tech-card {
+        width: 48%;
+    }
+    
+    .about-card {
+        padding: 30px;
+        max-width: 900px;
+    }
+    
+    .big-name {
+        font-size: 90px;
+    }
+    
+    .logo {
+        width: 250px;
+    }
+}
+
+/* Mobile devices */
+@media (max-width: 768px) {
+    /* Navigation adjustments for mobile */
+    nav {
+        left: 20px;
+        top: 20px;
+        transform: none;
+    }
+    
+    nav ul {
+        flex-direction: row;
+        gap: 10px;
+    }
+    
+    nav ul li {
+        margin: 0 10px;
+    }
+    
+    .nav-link i {
+        font-size: 24px;
+    }
+    
+    .nav-link::before {
+        display: none; /* Hide tooltips on mobile */
+    }
+    
+    /* Home section mobile adjustments */
+    .intro {
+        padding-top: 80px;
+    }
+    
+    .logo {
+        width: 200px;
+    }
+    
+    .big-name {
+        font-size: 60px;
+        line-height: 1.1;
+    }
+    
+    .subtitle {
+        font-size: 24px;
+    }
+    
+    .intro p {
+        font-size: 18px;
+        letter-spacing: 1px;
+    }
+    
+    /* Section adjustments */
+    section {
+        height: auto;
+        min-height: 100vh;
+        padding: 40px 20px;
+    }
+    
+    /* About section mobile */
+    .about-section {
+        padding: 40px 20px;
+    }
+    
+    .about-section h1 {
+        font-size: 2.5rem;
+    }
+    
+    .about-section p {
+        font-size: 1rem;
+        text-align: center;
+    }
+    
+    .about-card {
+        flex-direction: column;
+        padding: 30px 20px;
+        margin: 0 10px;
+    }
+    
+    .about-image-container {
+        margin-right: 0;
+        margin-bottom: 20px;
+        flex: none;
+    }
+    
+    .about-image-container img {
+        max-width: 250px;
+    }
+    
+    .about-content {
+        flex: none;
+        padding: 10px;
+    }
+    
+    .about-content h2 {
+        font-size: 2rem;
+    }
+    
+    .about-content .role {
+        font-size: 1.3rem;
+    }
+    
+    .about-content .description {
+        font-size: 1rem;
+        text-align: center;
+    }
+    
+    /* Experience section mobile */
+    .experience-section {
+        padding: 40px 20px;
+    }
+    
+    .experience-section h1 {
+        font-size: 2rem;
+    }
+    
+    .experience-section p {
+        font-size: 1rem;
+    }
+    
+    .tech-cards {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .tech-card {
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 30px 20px;
+    }
+    
+    .tech-card h2 {
+        font-size: 1.5rem;
+    }
+    
+    .tech-list {
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+    
+    .tech-logo {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .info-icon {
+        width: 80px;
+        height: 80px;
+    }
+    
+    /* Certificates section mobile */
+    #Certs {
+        padding: 40px 20px;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .certs-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .cert-item {
+        width: 100%;
+        max-width: 350px;
+        height: auto;
+        padding: 15px;
+    }
+    
+    /* Contact section mobile */
+    #ContactMe {
+        padding: 40px 20px;
+    }
+    
+    .contact-form {
+        max-width: 100%;
+    }
+    
+    .form-group input,
+    .form-group textarea {
+        font-size: 16px; /* Prevents zoom on iOS */
+    }
+    
+    .submit-button {
+        font-size: 1.1rem;
+    }
+    
+    /* Modal mobile adjustments */
+    .modal-content {
+        width: 95%;
+        max-width: none;
+    }
+    
+    .close {
+        top: 10px;
+        right: 25px;
+        font-size: 30px;
+    }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+    .big-name {
+        font-size: 48px;
+    }
+    
+    .subtitle {
+        font-size: 20px;
+    }
+    
+    .intro p {
+        font-size: 16px;
+    }
+    
+    .logo {
+        width: 180px;
+    }
+    
+    .about-section h1 {
+        font-size: 2rem;
+    }
+    
+    .about-content h2 {
+        font-size: 1.8rem;
+    }
+    
+    .about-content .role {
+        font-size: 1.2rem;
+    }
+    
+    .experience-section h1 {
+        font-size: 1.8rem;
+    }
+    
+    .tech-card {
+        padding: 20px 15px;
+    }
+    
+    .tech-card h2 {
+        font-size: 1.3rem;
+    }
+    
+    .tech-logo {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .social-icons a {
+        font-size: 24px;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    nav {
+        left: 15px;
+        top: 15px;
+    }
+    
+    nav ul li {
+        margin: 0 8px;
+    }
+    
+    .nav-link i {
+        font-size: 20px;
+    }
+}
+
+/* Landscape mobile orientation */
+@media (max-width: 768px) and (orientation: landscape) {
+    .intro {
+        padding-top: 60px;
+    }
+    
+    .big-name {
+        font-size: 50px;
+    }
+    
+    .logo {
+        width: 150px;
+    }
+    
+    section {
+        min-height: auto;
+        padding: 30px 20px;
+    }
+    
+    .about-card {
+        flex-direction: row;
+    }
+    
+    .about-image-container {
+        margin-right: 20px;
+        margin-bottom: 0;
+    }
+    
+    .about-image-container img {
+        max-width: 200px;
+    }
 }
